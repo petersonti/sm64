@@ -28,6 +28,7 @@ echo Copy HD-Textures
 cp -r temp/hd-textures/gfx build/us_pc/res
 echo Extract DynOs
 7z x temp/Render96_DynOs_v3.2.7z -o./build/us_pc/dynos/packs/
+chmod 755 build/us_pc/dynos/packs/Render96_DynOs_v3.2
 
 #delete folder to fix
 rm -r ./build/us_pc/res/gfx/textures/skyboxes
