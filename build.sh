@@ -15,7 +15,6 @@ wget https://github.com/Render96/ModelPack/releases/download/3.2/Render96_DynOs_
 
 #copy files
 cd Render96ex/
-7z x temp/Render96_DynOs_v3.2.7z -o./dynos/packs/
 cp temp/sm64/baserom.us.z64 .
 
 
@@ -23,10 +22,12 @@ cp temp/sm64/baserom.us.z64 .
 make RENDER_API=GL BETTERCAMERA=1 NODRAWINGDISTANCE=1 TEXTURE_FIX=1 EXTERNAL_DATA=1 RENDER_API=GL EXT_OPTIONS_MENU=1 -j4
 
 
-#copy hd-texture
+#copy hd-texture and DynOs
 echo ''
 echo Copy HD-Textures
 cp -r temp/hd-textures/gfx build/us_pc/res
+echo Extract DynOs
+7z x temp/Render96_DynOs_v3.2.7z -o./build/us_pc/dynos/packs/
 
 #delete folder to fix
 rm -r ./build/us_pc/res/gfx/textures/skyboxes
@@ -124,5 +125,5 @@ hub = 11111
 
 [sgi]
 keys = "1111111111"
-character = "1"
+character = "0"
 coins = "000000"' > $HOME/.local/share/sm64ex/render96_save_file_0.sav
