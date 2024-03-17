@@ -34,7 +34,7 @@ rm ./build/us_pc/res/gfx/textures/outside/castle_grounds_textures.01000.rgba16.p
 
 #Copy folder
 
-echo copy build to executable
+echo Copy build to executable
 sudo cp -r ./build/us_pc /opt/render96ex
 
 #create shortcut
