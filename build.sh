@@ -24,6 +24,7 @@ make RENDER_API=GL BETTERCAMERA=1 NODRAWINGDISTANCE=1 TEXTURE_FIX=1 EXTERNAL_DAT
 
 
 #copy hd-texture
+echo ''
 echo Copy HD-Textures
 cp -r temp/hd-textures/gfx build/us_pc/res
 
@@ -32,8 +33,9 @@ rm -r ./build/us_pc/res/gfx/textures/skyboxes
 rm ./build/us_pc/res/gfx/textures/outside/castle_grounds_textures.01000.rgba16.png
 
 #Copy folder
+
 echo copy build to executable
-sudo cp -r ./build/us_pc /opt/render96
+sudo cp -r ./build/us_pc /opt/render96ex
 
 #create shortcut
 echo '[Desktop Entry]
