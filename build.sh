@@ -24,6 +24,16 @@ make RENDER_API=GL BETTERCAMERA=1 NODRAWINGDISTANCE=1 TEXTURE_FIX=1 EXTERNAL_DAT
 
 #copy hd-texture and DynOs
 echo ''
+#convert to 50% texture - mod
+sudo apt -y install imagemagick
+echo Convert Texture to 50%
+cp -r temp/hd-textures temp/hd-textures-orig
+cd temp/hd-textures
+find gfx -type d -exec mkdir -p gf/{} \;
+find gfx -type f -exec convert -resize 50% {} gf/{} \;
+cp -r gf/gfx .
+cd ../..
+
 echo Copy HD-Textures
 cp -r temp/hd-textures/gfx build/us_pc/res
 echo Extract DynOs
@@ -31,11 +41,10 @@ echo Extract DynOs
 chmod 755 build/us_pc/dynos/packs/Render96_DynOs_v3.2
 
 #delete folder to fix
-rm -r ./build/us_pc/res/gfx/textures/skyboxes
-rm ./build/us_pc/res/gfx/textures/outside/castle_grounds_textures.01000.rgba16.png
+#rm -r ./build/us_pc/res/gfx/textures/skyboxes
+#rm ./build/us_pc/res/gfx/textures/outside/castle_grounds_textures.01000.rgba16.png
 
 #Copy folder
-
 echo Copy build to executable
 sudo cp -r ./build/us_pc /opt/render96ex
 
